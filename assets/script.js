@@ -53,9 +53,9 @@ function takeCommand(message){
    voice.style.display="none"
     btn.style.display="flex"
     if(message.includes("hello")||message.includes("hey")){
-        speak("hello sir,what can i help you?")
+        speak("hello how are you, what can i help you?")
     }
-    else if(message.includes("who are you")){
+    else if(message.includes("who are you") ||message.includes("What is your name")){
         speak("i am virtual assistant ,created by Ahmad Raza")
     }else if(message.includes("open youtube")){
         speak("opening youtube...")
@@ -90,8 +90,8 @@ function takeCommand(message){
         speak(date)
       }
     else{
-        let finalText="this is what i found on internet regarding" + message.replace("shipra","") || message.replace("shifra","")
+        let finalText="this is what i found on internet regarding" + message.replace("Ahmad","") || message.replace("Ahmad","")
         speak(finalText)
-        window.open(`https://www.google.com/search?q=${message.replace("shipra","")}`,"_blank")
+        window.open(`https://www.google.com/search?q=${message.replace("Ahmad","")}`,"_blank")
     }
 }
