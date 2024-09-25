@@ -33,10 +33,7 @@ window.addEventListener('load',()=>{
 let speechRecognition= window.SpeechRecognition || window.webkitSpeechRecognition 
 let recognition =new speechRecognition()
 
-/**
- * When the speech recognition system has a result, this function is called with the result as an event
- * @param {event} event - the result of the speech recognition
- */
+
 recognition.onresult=(event)=>{
     let currentIndex=event.resultIndex
     let transcript=event.results[currentIndex][0].transcript
@@ -49,16 +46,9 @@ btn.addEventListener("click",()=>{
     voice.style.display="block"
     btn.style.display="none"
 })
-/**
- * This function takes the user's message in the text box and performs the following commands:
- * - Says hello and asks what they can do for the user
- * - Says who they are
- * - Opens youtube, google, facebook, instagram, calculator, or whatsapp
- * - Tells the current time
- * - Tells the current date
- * - If the command is not recognized, it searches for the command on the internet and opens a new tab with the search results
- * @param {string} message - the user's message in the text box
- */
+
+
+
 function takeCommand(message){
    voice.style.display="none"
     btn.style.display="flex"
@@ -89,7 +79,7 @@ function takeCommand(message){
     }
     else if(message.includes("open whatsapp")){
         speak("opening whatsapp..")
-        window.open("whatsapp://")
+        window.open("https://web.whatsapp.com/","_blank")
     }
     else if(message.includes("time")){
       let time=new Date().toLocaleString(undefined,{hour:"numeric",minute:"numeric"})
